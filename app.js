@@ -34,34 +34,29 @@ const collectInputs = async (inputs = []) => {
         name: "email",
         message: "What is the employee's email?"
     },
-
     {
-        type: "checkbox",
-        message: "What is the employee's role?",
-        name: "role",
-        choices: [
-          "Engineer", 
-          "Intern", 
-          "Manager"
-        ]
+      type: "rawlist",
+      name: "role",
+      message: "What is the employee's role?",
+      choices: [Engineer, Intern, Manager],
     },
     {
         type: "input",
         name: "github",
         message: "What is the employee's GitHub username?", 
-        when: (answers) => answers.role[0] === "Engineer"
+        when: (answers) => answers.role === "Engineer"
     },
     {
         type: "input",
         name: "school",
         message: "What school did the employee go to?", 
-        when: (answers) => answers.role[0] === "Intern"
+        when: (answers) => answers.role === "Intern"
     },
     {
         type: "input",
         name: "officeNumber",
         message: "What is the employee's office number?", 
-        when: (answers) => answers.role[0] === "Manager"
+        when: (answers) => answers.role === "Manager"
     },
     {
         type: "confirm",
@@ -72,16 +67,20 @@ const collectInputs = async (inputs = []) => {
 ];
 
 const { again, ...answers } = await inquirer.prompt(prompts);
-const employees = [...inputs, answers];
-return again ? collectInputs(employees) : employees;
-
+// const employees = [...inputs, answers];
+const newInputs = [...inputs, answers];
+return again ? collectInputs(newInputs) : newInputs;
 };
 
 const main = async () => {
-    const inputs = await collectInputs();
+    const inputs = await collectInputs().catch((err) => {
+      console.log(err);
+  });
     console.log(inputs);
+    console.log("_____________");
+    // console.log(newInputs);
     render();
-  }
+}
 
 
 main();
