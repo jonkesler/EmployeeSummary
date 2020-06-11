@@ -4,24 +4,21 @@ const Intern = require("./lib/Intern");
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
-const util = require("util");
 
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
-const writeFileAsync = util.promisify(fs.writeFile);
 
+const newInputs =[];
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
 // Had the loop working in appTest but this is the only way I could figure to get it to save to an array.
 // http://www.penandpaperprogrammer.com/blog/2018/12/16/repeating-questions-with-inquirerjs
 
-// const collectInputs = async (inputs = []) => {
-//     const prompts = [
-function collectInputs() {
-  return inquirer.prompt([
+const collectInputs = async (inputs = []) => {
+    const prompts = [
     {
       type: "input",
       name: "name",
@@ -67,32 +64,29 @@ function collectInputs() {
         message: "Would you like to add another employee?",
         default: true
       },
-// ];
-  ]);
-}
+];
 
-async function init() {
-  console.log("hi")
-  try {
-      // const answers = await promptUser();
-      const answers = await collectInputs();
-      // await collectInputs();
-      console.log(answers);
-      console.log(answers.name);
-      console.log(this.id);
-      console.log(this.role);
-      const html = render(answers);
+const { again, ...answers } = await inquirer.prompt(prompts);
+// const employees = [...inputs, answers];
+const newInputs = [...inputs, answers];
+return again ? collectInputs(newInputs) : newInputs;
+};
 
-      await writeFileAsync("index.html", html);
-
-      console.log("Successfully wrote to index.html");
-  } catch (err) {
+const main = async () => {
+    const inputs = await collectInputs().catch((err) => {
       console.log(err);
-  }
+  });
+    console.log(inputs);
+    console.log("_____________");
+    console.log(this.name);
+    console.log(this.id);
+    console.log(this.role);
+    console.log(newInputs);
+    render();
 }
 
-init();
 
+main();
 
 
 
