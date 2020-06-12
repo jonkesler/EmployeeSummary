@@ -1,10 +1,10 @@
 [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
 
-![GitHub contributors](https://img.shields.io/github/contributors/jonkesler/EmployeeSummay)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/jonkesler/EmployeeSummay?style=for-the-badge)
-![GitHub repo size](https://img.shields.io/github/repo-size/jonkesler/EmployeeSummay)
+![GitHub contributors](https://img.shields.io/github/contributors/jonkesler/EmployeeSummary)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/jonkesler/EmployeeSummary?style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/jonkesler/EmployeeSummary)
 
-# ReadMe Generator
+# Employee Summary
 
 
 
