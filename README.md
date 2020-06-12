@@ -1,0 +1,69 @@
+[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
+
+![GitHub contributors](https://img.shields.io/github/contributors/jonkesler/EmployeeSummay)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/jonkesler/EmployeeSummay?style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/jonkesler/EmployeeSummay)
+
+# ReadMe Generator
+
+
+
+## Description 
+    
+Creates an Employee Summary in html using node.js
+    
+    
+## Table of Contents
+    
+* [Installation](#installation)
+* [Usage](#usage)
+* [License](#license)
+* [Contributing](#contributing)
+* [Tests](#tests)
+* [Contact](#contact)
+    
+    
+## Installation
+    
+Clone the Repo,Install NPM packages,Run node,Answer questions,open generated html page located in the output folder.
+
+      
+## Usage 
+    
+To create an HTML page showing employees grouped by type.
+
+Download from GitHub
+
+
+## License
+
+This Project uses a MIT License License.
+
+
+## Contributing
+    
+Jon Kesler
+    
+    
+## Tests
+
+.filter will not work in renderHTML because the function to prompt for questions returns this. as undefined.
+    
+
+## Contact
+
+<img src="https://avatars3.githubusercontent.com/u/60242682?v=4">
+
+If you would like to contribute to this project please contact: 
+  Jon Kesler 
+  Email:jkesler@hotmail.com   
+
+
+Web URL: https://jonkesler.github.io/EmployeeSummary/
+
+Repository URL: https://github.com/jonkesler/EmployeeSummary.git
+
+Repository SSH: git@github.com:jonkesler/EmployeeSummary.git
+
+
+
