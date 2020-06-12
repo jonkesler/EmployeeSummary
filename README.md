@@ -52,8 +52,6 @@ Jon Kesler
 
 ## Contact
 
-<img src="https://avatars3.githubusercontent.com/u/60242682?v=4">
-
 If you would like to contribute to this project please contact: 
   Jon Kesler 
   Email:jkesler@hotmail.com   
